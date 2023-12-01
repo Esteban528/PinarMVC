@@ -1,0 +1,10 @@
+@use 'base/variables' as v;
+// Variable overrides first
+$primary: v.$color_primary;
+$enable-shadows: true;
+$prefix: "mo-";
+$nav-underline-link-active-color: $primary;
+
+
+// Then import Bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap";

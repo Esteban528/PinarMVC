@@ -1,0 +1,22 @@
+{
+    "name": "esteban/ya-express",
+    "description": "Ya express Web site",
+    "autoload": {
+        "psr-4": {
+            "Esteban\\Pinarsoft\\": "src/",
+            "MVC\\": "./",
+            "Controller\\": "./controller",
+            "Model\\": "./models"
+        }
+    },
+    "authors": [
+        {
+            "name": "esteban",
+            "email": "estebangonza2005@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "intervention/image": "^2.7"
+    }
+}
