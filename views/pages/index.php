@@ -1,3 +1,0 @@
-<!--
-  Página principal
- -->
