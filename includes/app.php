@@ -37,3 +37,8 @@ function calcTime($fechaPublicacion) {
       return "Hace " . $diferenciaDias . " días";
   }
 }
+
+function s($html) : string {
+  $s = htmlspecialchars($html);
+  return $s;
+}
