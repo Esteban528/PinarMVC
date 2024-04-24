@@ -1,0 +1,18 @@
+#DevMode
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/public/index\.php
+RewriteRule ^(.*)$ /public/index.php [L]
+
+
+# Production
+#RewriteEngine On
+
+#RewriteCond %{HTTPS} Off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#RewriteCond %{HTTP_HOST} !^(?:www\.)?cifmta\.com$ [NC]
+#RewriteRule (.*) https://cifmta.com/$1 [R=301,L]
+
+#RewriteCond %{REQUEST_URI} !^/public/index\.php
+#RewriteRule ^(.*)$ /public/index.php [L]

@@ -1,6 +1,10 @@
-version: '3.8'
-
 services:
+  composer:
+    image: composer:latest
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: [ "install" ] # Comando de Composer que quieres ejecutar, por ejemplo, install o update
   web:
     image: phppinarmvc:1
     volumes:
@@ -14,23 +18,23 @@ services:
     networks:
       - pinarMVCnetwork
   db:
-    image: mysql:5.7
+    image: mariadb:10.4
     volumes:
-      - mysqlVolume:/var/lib/mysql
+      - databaseVolume:/var/lib/mysql
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      MYSQL_DATABASE: users
+      MYSQL_DATABASE: pinarmvcDB
       MYSQL_USER: admin
-      MYSQL_PASSWORD: admin 
-      MYSQL_ROOT_PASSWORD: 12345678 
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: 12345678
     networks:
-      - pinarMVCnetwork 
+      - pinarMVCnetwork
     ports:
       - 3306:3306
 
 networks:
   pinarMVCnetwork:
 
-volumes:
-  mysqlVolume:
 
+volumes:
+  databaseVolume:

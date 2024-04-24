@@ -4,7 +4,7 @@ function connectDB () : mysqli {
 	$dbPort = '3306'; // El puerto predeterminado de MySQL.
 	$dbUsername = 'root';
 	$dbPassword = '12345678';
-	$dbName = 'pinarmvc_p1_crud';
+	$dbName = 'pinarmvcDB';
 
 	// Conexión a la base de datos usando mysqli
 	$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName, $dbPort);
